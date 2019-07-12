@@ -88,11 +88,11 @@ class Item extends Component {
 
   render () {
     const { itemInfo } = this.props
-    const { itemDetail = {} } = itemInfo
-    const gallery = [
-      itemInfo.listPicUrl,
-      itemDetail.picUrl1, itemDetail.picUrl2, itemDetail.picUrl3, itemDetail.picUrl4
-    ].filter(i => i)
+    const { goodsinfo = {},imglist=[],describeHtml="" } = itemInfo
+    // const gallery = [
+    //   itemInfo.img_url,
+    //   itemDetail.picUrl1, itemDetail.picUrl2, itemDetail.picUrl3, itemDetail.picUrl4
+    // ].filter(i => i)
     const height = getWindowHeight(false)
     // XXX RN 的 transform 写法不同，这块可以统一放到 @utils/style 的 postcss() 中处理
     const popupStyle = process.env.TARO_ENV === 'rn' ?
@@ -110,13 +110,13 @@ class Item extends Component {
           className='item__wrap'
           style={{ height }}
         >
-          <Gallery list={gallery} />
-          <InfoBase data={itemInfo} />
-          <InfoParam list={itemInfo.attrList} />
-          <Detail html={itemDetail.detailHtml} />
+          <Gallery list={imglist} />
+          <InfoBase data={goodsinfo} />
+          // <InfoParam list={itemInfo.attrList} />
+          <Detail html={describeHtml} />
         </ScrollView>
 
-        {/* NOTE Popup 一般的实现是 fixed 定位，但 RN 不支持，只能用 absolute，要注意引入位置 */}
+        {/* NOTE Popup 一般的实现是 fixed 定位，但 RN 不支持，只能用 absolute，要注意引入位置
         <Popup
           visible={this.state.visible}
           onClose={this.toggleVisible}
@@ -128,7 +128,7 @@ class Item extends Component {
             onSelect={this.handleSelect}
           />
         </Popup>
-
+          */}
         <View className='item__footer'>
           <Footer onAdd={this.handleAdd} />
         </View>

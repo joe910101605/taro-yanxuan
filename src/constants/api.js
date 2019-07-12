@@ -16,7 +16,7 @@ export const API_HOME_BANNERIMAGES = `${host}/api/home/banner`
 export const API_HOME_CATEGORIES = `${host}/api/category/list`
 export const API_HOME_SEARCH_COUNT = `${host}/api/home/goodscount`
 export const API_HOME_PIN = `${hostM}/pin/min/item/recommend.json`
-export const API_HOME_RECOMMEND = `${host}/xhr/rcmd/index.json`
+export const API_HOME_RECOMMEND = `${host}/api/home/recommend`
 
 // cate
 export const API_CATE = `${host}/xhr/list/category.json`
@@ -37,5 +37,5 @@ export const API_USER_LOGIN = `${host}/xhr/u/mailLogin.json`
 export const API_CHECK_LOGIN = `${host}/xhr/u/checkLogin.json`
 
 // item
-export const API_ITEM = `${host}/xhr/item/detail.json`
+export const API_ITEM = `${host}/api/goods/info`
 export const API_ITEM_RECOMMEND = `${host}/xhr/rcmd/itemDetail.json`

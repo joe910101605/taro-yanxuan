@@ -23,40 +23,46 @@ export default class Recommend extends Component {
           <Text className='home-recommend__title-txt'>为你推荐</Text>
         </View>
         <View className='home-recommend__list'>
-          {list.filter(item => item.type === 1).map((item) => {
-            const { id, categoryItem } = item
+
+          {list.map((item) => {
+            const { id, categoryItem,goodsName,price,img_url } = item
             return (
               <View
                 key={id}
                 className='home-recommend__list-item'
                 onClick={this.handleClick.bind(this, id)}
               >
-                <Image className='home-recommend__list-item-img' src={categoryItem.listPicUrl} />
+                <Image className='home-recommend__list-item-img' src={"http://img.weapi.top/images/"+img_url} />
+              {/*
                 {!!categoryItem.simpleDesc && !categoryItem.simpleDescClose &&
                   <Text className='home-recommend__list-item-desc' numberOfLines={1}>
                     {categoryItem.simpleDesc}
                   </Text>
                 }
+              */}
                 <View className='home-recommend__list-item-info'>
+                {/*
                   {!!categoryItem.limitedTag &&
                     <Tag text={categoryItem.limitedTag} />
                   }
-
+                */}
                   <Text className='home-recommend__list-item-name' numberOfLines={1}>
-                    {categoryItem.name}
+                    {goodsName}
                   </Text>
 
                   <View className='home-recommend__list-item-price-wrap'>
                     <Text className='home-recommend__list-item-price'>
-                      ¥{categoryItem.activityPrice || categoryItem.retailPrice}
+                      ¥{price}
                     </Text>
+              {/*
                     {!!categoryItem.activityPrice &&
                       <Text className='home-recommend__list-item-price--origin'>
                         ¥{categoryItem.retailPrice}
                       </Text>
                     }
+                */}
                   </View>
-
+              {/*
                   {!!(categoryItem.comments && categoryItem.comments[0] && categoryItem.comments[0].content) &&
                     <View className='home-recommend__list-item-commend'>
                       <Image
@@ -68,6 +74,7 @@ export default class Recommend extends Component {
                       </Text>
                     </View>
                   }
+            */}
                 </View>
               </View>
             )

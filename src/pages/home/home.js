@@ -52,7 +52,7 @@ class Home extends Component {
     this.props.dispatchCategories()
     this.props.dispatchSearchCount()
     //this.props.dispatchPin({ orderType: 4, size: 12 })
-    //this.loadRecommend()
+    this.loadRecommend()
   }
 
   loadRecommend = () => {
@@ -91,6 +91,7 @@ class Home extends Component {
     }
 
     const { homeInfo,banner_images,categories, searchCount, recommend, pin } = this.props
+
     return (
       <View className='home'>
         <View className='home__search'>

@@ -10,35 +10,38 @@ export default class InfoBase extends Component {
 
   render () {
     const { data } = this.props
-    const { itemStar = {}, tagList = [] } = data
+    // const { itemStar = {}, tagList = [] } = data
 
     return (
       <View className='item-info-base'>
         <View className='item-info-base__header'>
           <View className='item-info-base__header-wrap'>
-            <Text className='item-info-base__header-name'>{data.name}</Text>
-            <Text className='item-info-base__header-desc'>{data.simpleDesc}</Text>
+            <Text className='item-info-base__header-name'>{data.goodsName}</Text>
+            // <Text className='item-info-base__header-desc'>{data.simpleDesc}</Text>
           </View>
-          <View className='item-info-base__header-star'>
-            <Text className='item-info-base__header-star-txt'>
-              {`${parseFloat(itemStar.goodCmtRate) || 0}%`}
-            </Text>
-            <Text className='item-info-base__header-star-link'>{'好评率>'}</Text>
-          </View>
+          // <View className='item-info-base__header-star'>
+          //   <Text className='item-info-base__header-star-txt'>
+          //     {`${parseFloat(itemStar.goodCmtRate) || 0}%`}
+          //   </Text>
+          //   // <Text className='item-info-base__header-star-link'>{'好评率>'}</Text>
+          // </View>
         </View>
 
         <View className='item-info-base__price'>
           <Text className='item-info-base__price-symbol'>¥</Text>
           <Text className='item-info-base__price-txt'>
-            {data.activityPrice || data.retailPrice}
+            {data.price}
           </Text>
+    {/*
           {!!data.activityPrice &&
             <Text className='item-info-base__price-origin'>
               ¥{data.retailPrice}
             </Text>
           }
+          */}
         </View>
 
+    {/*
         {!!tagList.length &&
           <View className='item-info-base__tag'>
             {tagList.map(item => (
@@ -49,6 +52,7 @@ export default class InfoBase extends Component {
             ))}
           </View>
         }
+        */}
       </View>
     )
   }

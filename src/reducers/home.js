@@ -1,5 +1,5 @@
 import {
-  HOME_INFO, HOME_SEARCH_COUNT, HOME_RECOMMEND, HOME_PIN
+  HOME_INFO,HOME_CATEGORIES,HOME_BANNERIMAGES, HOME_SEARCH_COUNT, HOME_RECOMMEND, HOME_PIN
 } from '@constants/home'
 
 const INITIAL_STATE = {
@@ -15,6 +15,24 @@ export default function home(state = INITIAL_STATE, action) {
       return {
         ...state,
         homeInfo: action.payload
+      }
+    }
+
+    case HOME_BANNERIMAGES: {
+      return {
+        ...state,
+        banner_images: action.payload.banner_images
+      }
+    }
+    case HOME_CATEGORIES: {
+      const categories = action.payload.categories;
+      const grid_list = [];
+      categories.forEach(function (item) {
+        grid_list.push({image:"http://img.weapi.top/images/"+item.img_url,value:item.categoryName})
+      })
+      return {
+        ...state,
+        categories:grid_list
       }
     }
     case HOME_SEARCH_COUNT: {

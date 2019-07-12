@@ -6,6 +6,7 @@ import * as actions from '@actions/home'
 import { dispatchCartNum } from '@actions/cart'
 import { getWindowHeight } from '@utils/style'
 import Banner from './banner'
+import Categories from './categories'
 import Policy from './policy'
 import Pin from './pin'
 import Operation from './operation'
@@ -16,6 +17,9 @@ import Category from './category'
 import Recommend from './recommend'
 import searchIcon from './assets/search.png'
 import './home.scss'
+import {
+  AtGrid
+} from 'taro-ui'
 
 const RECOMMEND_SIZE = 20
 
@@ -34,19 +38,21 @@ class Home extends Component {
 
   componentDidMount() {
     // NOTE 暂时去掉不适配的内容
-    Taro.showToast({
-      title: '注意，由于严选小程序首页界面、接口大幅变动，暂时去掉不相符的部分，后续再跟进改动',
-      icon: 'none',
-      duration: 6000
-    })
+    // Taro.showToast({
+    //   title: '注意，由于严选小程序首页界面、接口大幅变动，暂时去掉不相符的部分，后续再跟进改动',
+    //   icon: 'none',
+    //   duration: 6000
+    // })
 
-    this.props.dispatchHome().then(() => {
-      this.setState({ loaded: true })
-    })
-    this.props.dispatchCartNum()
+   // this.props.dispatchHome().then(() => {
+     this.setState({ loaded: true })
+   // })
+    //this.props.dispatchCartNum()
+    this.props.dispatchBannerImages()
+    this.props.dispatchCategories()
     this.props.dispatchSearchCount()
-    this.props.dispatchPin({ orderType: 4, size: 12 })
-    this.loadRecommend()
+    //this.props.dispatchPin({ orderType: 4, size: 12 })
+    //this.loadRecommend()
   }
 
   loadRecommend = () => {
@@ -84,7 +90,7 @@ class Home extends Component {
       return <Loading />
     }
 
-    const { homeInfo, searchCount, recommend, pin } = this.props
+    const { homeInfo,banner_images,categories, searchCount, recommend, pin } = this.props
     return (
       <View className='home'>
         <View className='home__search'>
@@ -102,15 +108,18 @@ class Home extends Component {
           style={{ height: getWindowHeight() }}
         >
           <View onClick={this.handlePrevent}>
-            <Banner list={homeInfo.focus} />
-            <Policy list={homeInfo.policyDesc} />
+            <Banner list={banner_images} />
+            <Categories list={categories}/>
 
-            {/* 免费拼团 */}
+    {/*
+            <Policy list={homeInfo.policyDesc} />
+*/}
+            {/* 免费拼团
             <Pin
               banner={homeInfo.newUserExclusive}
               list={pin}
             />
-
+            */}
             {/* 不知道叫啥 */}
             {/* <Operation
               list={homeInfo.operationCfg}

@@ -12,7 +12,9 @@ export const CDN = 'https://yanxuan.nosdn.127.net'
 
 // home
 export const API_HOME = `${host}/xhr/index/index.json`
-export const API_HOME_SEARCH_COUNT = `${host}/xhr/search/displayBar.json`
+export const API_HOME_BANNERIMAGES = `${host}/api/home/banner`
+export const API_HOME_CATEGORIES = `${host}/api/category/list`
+export const API_HOME_SEARCH_COUNT = `${host}/api/home/goodscount`
 export const API_HOME_PIN = `${hostM}/pin/min/item/recommend.json`
 export const API_HOME_RECOMMEND = `${host}/xhr/rcmd/index.json`
 

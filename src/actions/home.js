@@ -1,10 +1,11 @@
 import {
-  HOME_INFO, HOME_SEARCH_COUNT, HOME_RECOMMEND, HOME_PIN
+  HOME_INFO,HOME_BANNERIMAGES,HOME_CATEGORIES, HOME_SEARCH_COUNT, HOME_RECOMMEND, HOME_PIN
 } from '@constants/home'
 import {
-  API_HOME, API_HOME_SEARCH_COUNT, API_HOME_RECOMMEND, API_HOME_PIN
+  API_HOME,API_HOME_CATEGORIES, API_HOME_SEARCH_COUNT, API_HOME_RECOMMEND, API_HOME_PIN
 } from '@constants/api'
 import { createAction } from '@utils/redux'
+import {API_HOME_BANNERIMAGES} from "../constants/api";
 
 /**
  * 首页数据
@@ -15,7 +16,17 @@ export const dispatchHome = payload => createAction({
   type: HOME_INFO,
   payload
 })
+export const dispatchBannerImages = payload => createAction({
+  url:API_HOME_BANNERIMAGES,
+  type:HOME_BANNERIMAGES,
+  payload
+})
 
+export const dispatchCategories = payload => createAction({
+  url:API_HOME_CATEGORIES,
+  type:HOME_CATEGORIES,
+  payload
+})
 /**
  * 商品总数
  * @param {*} payload

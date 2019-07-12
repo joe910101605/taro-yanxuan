@@ -2,7 +2,7 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "taro-yanxuan",
 	"description": "Taro 多端实践之网易严选（微信小程序 + H5 + React Native）",
-	"appid": "touristappid",
+	"appid": "wx06c59f9986f41f98",
 	"setting": {
 		"urlCheck": false,
 		"es6": false,
@@ -12,5 +12,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {}
 }

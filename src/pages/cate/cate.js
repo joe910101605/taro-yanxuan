@@ -25,7 +25,7 @@ class Cate extends Component {
     this.props.dispatchMenu().then((res) => {
       this.setState({
         loaded: true,
-        current: res.categoryList[0].id
+        current: res.categories[0].id
       })
     })
   }
@@ -39,9 +39,11 @@ class Cate extends Component {
   render () {
     const { menu, category } = this.props
     const { current, loading } = this.state
+
     const currentCategory = category.find(item => item.id === current) || {}
-    const banner = currentCategory.focusBannerList || []
-    const list = currentCategory.categoryGroupList || []
+
+    const banner = [];// currentCategory.focusBannerList || []
+    const list = currentCategory.children|| []
     const height = getWindowHeight()
 
     if (!this.state.loaded) {

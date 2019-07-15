@@ -25,14 +25,14 @@ class CateSub extends Component {
   }
 
   componentDidMount() {
-    const payload = { categoryId: this.categoryId }
+    const payload = { parent_id: this.categoryId }
     this.props.dispatchSubMenu(payload).then((res) => {
       this.setState({ loaded: true })
-
-      const { category: { name, subCategoryList } } = res
-      Taro.setNavigationBarTitle({ title: name })
+console.log(res)
+      const {  categories } = res
+      // Taro.setNavigationBarTitle({ title: categoryName })
       setTimeout(() => {
-        const index = subCategoryList.findIndex(item => item.id === this.subId)
+        const index = categories.findIndex(item => item.id === this.subId)
         this.handleMenu(index)
       }, 0)
     })
@@ -72,11 +72,9 @@ class CateSub extends Component {
     const { subMenu, subCategory } = this.props
     const { current } = this.state
     const height = getWindowHeight(false)
-
     if (!this.state.loaded) {
       return <Loading />
     }
-
     return (
       <View className='cate-sub'>
         <View className='cate-sub__menu'>

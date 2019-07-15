@@ -19,9 +19,9 @@ export const API_HOME_PIN = `${hostM}/pin/min/item/recommend.json`
 export const API_HOME_RECOMMEND = `${host}/api/home/recommend`
 
 // cate
-export const API_CATE = `${host}/xhr/list/category.json`
-export const API_CATE_SUB = `${host}/xhr/list/subCate.json`
-export const API_CATE_SUB_LIST = `${host}/xhr/list/l2Items2.json`
+export const API_CATE = `${host}/api/category/list`
+export const API_CATE_SUB = `${host}/api/category/list`
+export const API_CATE_SUB_LIST = `${host}/api/goods/list`
 
 // cart
 export const API_CART = `${host}/xhr/promotionCart/getCarts.json`

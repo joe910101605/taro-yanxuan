@@ -28,22 +28,22 @@ export default class ItemList extends Component {
               className='comp-item-list__item'
               onClick={this.handleClick.bind(this, item)}
             >
-              <Image className='comp-item-list__item-img' src={item.listPicUrl} />
+              <Image className='comp-item-list__item-img' src={"http://img.weapi.top/images/"+item.img_url} />
               <View className='comp-item-list__item-info'>
                 {!!item.limitedTag &&
                   <Tag text={item.limitedTag} />
                 }
                 <Text className='comp-item-list__item-name' numberOfLines={1}>
-                  {item.name}
+                  {item.goodsName}
                 </Text>
 
                 <View className='comp-item-list__item-price-wrap'>
                   <Text className='comp-item-list__item-price'>
                     ¥{item.activityPrice || item.retailPrice}
                   </Text>
-                  {!!item.activityPrice &&
+                  {!!item.price &&
                     <Text className='comp-item-list__item-price--origin'>
-                      ¥{item.retailPrice}
+                      ¥{item.price}
                     </Text>
                   }
                 </View>

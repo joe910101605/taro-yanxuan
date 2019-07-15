@@ -10,21 +10,22 @@ const INITIAL_STATE = {
 export default function cate(state = INITIAL_STATE, action) {
   switch(action.type) {
     case CATE_MENU: {
-      const { categoryList } = action.payload
-      const menu = categoryList.map(({ id, name }) => ({ id, name }))
-      return { ...state, menu, category: categoryList }
+      const { categories } = action.payload
+      const menu = categories.map(({ id, categoryName }) => ({ id, categoryName }))
+      return { ...state, menu, category: categories }
     }
     case CATE_SUB: {
       return {
         ...state,
-        subMenu: action.payload.category.subCategoryList
+        subMenu: action.payload.categories
       }
     }
     case CATE_SUB_LIST: {
-      const { id, itemList } = action.payload
+
+      const { category_id, rows } = action.payload
       return {
         ...state,
-        subCategory: { ...state.subCategory, [id]: itemList }
+        subCategory: { ...state.subCategory, [category_id]: rows }
       }
     }
     default:

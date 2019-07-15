@@ -27,7 +27,7 @@ export default class Menu extends Component {
               <Text
                 className={classNames('cate-menu__item-name', active && 'cate-menu__item-name--active')}
               >
-                {item.name}
+                {item.categoryName}
               </Text>
             </View>
           )

@@ -27,7 +27,7 @@ export default class Banner extends Component {
             className='cate-sub-tab__item'
             onClick={this.handleClick.bind(this, index)}
           >
-            <Text className='cate-sub-tab__item-txt'>{item.name}</Text>
+            <Text className='cate-sub-tab__item-txt'>{item.categoryName}</Text>
             {index === current &&
               <View className='cate-sub-tab__item-line' />
             }

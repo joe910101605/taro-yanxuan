@@ -11,11 +11,12 @@ export default class List extends Component {
   }
 
   getBaseItem = (item) => ({
+    cartId:item.id,
     skuId: item.skuId,
     type: item.type,
     extId: item.extId,
     cnt: item.cnt,
-    checked: item.checked,
+    checked: item.isCheck,
     canCheck: true,
     promId: this.props.promId,
     promType: this.props.promType
@@ -23,14 +24,14 @@ export default class List extends Component {
 
   handleUpdate = (item, cnt) => {
     const payload = {
-      skuList: [{ ...this.getBaseItem(item), cnt }]
+      ...this.getBaseItem(item), cnt
     }
     this.props.onUpdate(payload)
   }
 
   handleUpdateCheck = (item) => {
     const payload = {
-      skuList: [{ ...this.getBaseItem(item), checked: !item.checked }]
+      ...this.getBaseItem(item), checked: !item.isCheck
     }
     this.props.onUpdateCheck(payload)
   }
@@ -50,7 +51,7 @@ export default class List extends Component {
             className='cart-list__item'
           >
             <CheckboxItem
-              checked={item.checked}
+              checked={item.isCheck==1}
               onClick={this.handleUpdateCheck.bind(this, item)}
             />
             <Image

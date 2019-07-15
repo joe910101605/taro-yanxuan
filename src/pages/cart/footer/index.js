@@ -9,27 +9,28 @@ export default class Footer extends Component {
     onToggle: () => {}
   }
 
-  handleUpdateCheck = () => {
-    const { cartInfo } = this.props
-    const { cartGroupList = [], countCornerMark, selectedCount } = cartInfo
-    const cartList = cartGroupList.slice(1)
-    const payload = { skuList: [] }
-    const isAllChecked = !!selectedCount && parseInt(countCornerMark) === selectedCount
-    const nextChecked = !isAllChecked
-    cartList.forEach((group) => {
-      group.cartItemList.forEach((item) => {
-        payload.skuList.push({
-          skuId: item.skuId,
-          type: item.type,
-          extId: item.extId,
-          cnt: item.cnt,
-          checked: nextChecked,
-          canCheck: true,
-          promId: group.promId,
-          promType: group.promType
-        })
-      })
-    })
+  handleUpdateCheck = (cartInfo) => {
+    // const { cartInfo } = this.props
+    // const { cartGroupList = [], countCornerMark, selectedCount } = cartInfo
+    // const cartList = cartGroupList.slice(1)
+    // const payload = { skuList: [] }
+    // const isAllChecked = !!selectedCount && parseInt(countCornerMark) === selectedCount
+    // const nextChecked = !isAllChecked
+    // cartList.forEach((group) => {
+    //   group.cartItemList.forEach((item) => {
+    //     payload.skuList.push({
+    //       skuId: item.skuId,
+    //       type: item.type,
+    //       extId: item.extId,
+    //       cnt: item.cnt,
+    //       checked: nextChecked,
+    //       canCheck: true,
+    //       promId: group.promId,
+    //       promType: group.promType
+    //     })
+    //   })
+    // })
+    const payload = { checkall:!!cartInfo.selectedCount?0:1}
     this.props.onUpdateCheck(payload)
   }
 
@@ -47,7 +48,7 @@ export default class Footer extends Component {
         <View className='cart-footer__select'>
           <CheckboxItem
             checked={!!cartInfo.selectedCount}
-            onClick={this.handleUpdateCheck}
+            onClick={this.handleUpdateCheck.bind(this, cartInfo)}
           >
             <Text className='cart-footer__select-txt'>
               {!cartInfo.selectedCount ? '全选' : `已选(${cartInfo.selectedCount})`}
@@ -56,7 +57,7 @@ export default class Footer extends Component {
         </View>
         <View className='cart-footer__amount'>
           <Text className='cart-footer__amount-txt'>
-            ¥{parseFloat(cartInfo.actualPrice).toFixed(2)}
+            ¥{parseFloat(cartInfo.totalPrice).toFixed(2)}
           </Text>
         </View>
         <View className='cart-footer__btn'>

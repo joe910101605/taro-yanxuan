@@ -28,8 +28,8 @@ export const API_CART = `${host}/api/cart/list`
 export const API_CART_NUM = `${host}/xhr/promotionCart/getMiniCartNum.json`
 export const API_CART_RECOMMEND = `${host}/xhr/rcmd/cart.json`
 export const API_CART_ADD = `${host}/api/cart/add`
-export const API_CART_UPDATE = `${host}/xhr/promotionCart/update.json`
-export const API_CART_UPDATE_CHECK = `${host}/xhr/promotionCart/updateCheck.json`
+export const API_CART_UPDATE = `${host}/api/cart/update`
+export const API_CART_UPDATE_CHECK = `${host}/api/cart/updateCheck`
 
 // user
 export const API_USER = `${host}/xhr/user/getDetail.json`

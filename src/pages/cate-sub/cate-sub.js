@@ -28,7 +28,6 @@ class CateSub extends Component {
     const payload = { parent_id: this.categoryId }
     this.props.dispatchSubMenu(payload).then((res) => {
       this.setState({ loaded: true })
-console.log(res)
       const {  categories } = res
       // Taro.setNavigationBarTitle({ title: categoryName })
       setTimeout(() => {

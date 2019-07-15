@@ -25,16 +25,16 @@ class Index extends Component {
   }
 
   componentDidShow() {
-    fetch({ url: API_CHECK_LOGIN, showToast: false, autoLogin: false }).then((res) => {
-      if (res) {
+    // fetch({ url: API_CHECK_LOGIN, showToast: false, autoLogin: false }).then((res) => {
+    //   if (res) {
         this.setState({ loaded: true, login: true })
         this.props.dispatchCart()
-        this.props.dispatchCartNum()
-        this.props.dispatchRecommend()
-      } else {
-        this.setState({ loaded: true, login: false })
-      }
-    })
+        //this.props.dispatchCartNum()
+        //this.props.dispatchRecommend()
+      // } else {
+      //   this.setState({ loaded: true, login: false })
+      // }
+    // })
   }
 
   toLogin = () => {
@@ -45,10 +45,11 @@ class Index extends Component {
 
   render () {
     const { cartInfo, recommend } = this.props
-    const { cartGroupList = [] } = cartInfo
-    const cartList = cartGroupList.filter(i => !i.promType)
-    const extList = recommend.extList || []
-    const isEmpty = !cartList.length
+
+    const { goods = [] } = cartInfo
+    // const cartList = goods.filter(i => !i.promType)
+    //const extList = recommend.extList || []
+    const isEmpty = !goods.length
     const isShowFooter = !isEmpty
 
     if (!this.state.loaded) {
@@ -84,20 +85,20 @@ class Index extends Component {
           <Tip list={cartInfo.policyDescList} />
           {isEmpty && <Empty />}
 
-          {!isEmpty && <Gift data={cartGroupList[0]} />}
+          {!isEmpty && <Gift data={goods[0]} />}
 
-          {!isEmpty && cartList.map((group, index) => (
+          {/*{!isEmpty && cartList.map((group, index) => (*/}
             <List
-              key={index}
-              promId={group.promId}
-              promType={group.promType}
-              list={group.cartItemList}
+              // key={index}
+              // promId={group.promId}
+              // promType={group.promType}
+              list={goods}
               onUpdate={this.props.dispatchUpdate}
               onUpdateCheck={this.props.dispatchUpdateCheck}
             />
-          ))}
+          {/*))}*/}
 
-          {/* 相关推荐 */}
+          {/* 相关推荐
           {extList.map((ext, index) => (
             <ItemList key={index} list={ext.itemList}>
               <View className='cart__ext'>
@@ -106,14 +107,14 @@ class Index extends Component {
               </View>
             </ItemList>
           ))}
-
-          {/* 猜你喜欢 */}
+          */}
+          {/* 猜你喜欢
           <ItemList list={recommend.itemList}>
             <View className='cart__recommend'>
               <Text className='cart__recommend-txt'>{recommend.desc}</Text>
             </View>
           </ItemList>
-
+          */}
           {isShowFooter &&
             <View className='cart__footer--placeholder' />
           }

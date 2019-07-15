@@ -45,15 +45,18 @@ class Item extends Component {
     const { visible, selected } = this.state
     const isSelected = visible && !!selected.id && itemInfo.skuMap[selected.id]
     const isSingleSpec = skuSpecList.every(spec => spec.skuSpecValueList.length === 1)
-
     if (isSelected || isSingleSpec) {
       const selectedItem = isSelected ? selected : {
         id: skuSpecList.map(spec => spec.skuSpecValueList[0].id).join(';'),
         cnt: 1
       }
-      const skuItem = itemInfo.skuMap[selectedItem.id] || {}
+
+      // const skuItem = itemInfo.skuMap[selectedItem.id] || {}
+
+      console.log(itemInfo)
       const payload = {
-        skuId: skuItem.id,
+        goodsId:itemInfo.goodsinfo.id,
+        // skuId: skuItem.id,
         cnt: selectedItem.cnt
       }
       this.props.dispatchAdd(payload).then(() => {

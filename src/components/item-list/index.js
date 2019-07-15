@@ -39,13 +39,9 @@ export default class ItemList extends Component {
 
                 <View className='comp-item-list__item-price-wrap'>
                   <Text className='comp-item-list__item-price'>
-                    ¥{item.activityPrice || item.retailPrice}
+                    ¥{item.price}
                   </Text>
-                  {!!item.price &&
-                    <Text className='comp-item-list__item-price--origin'>
-                      ¥{item.price}
-                    </Text>
-                  }
+
                 </View>
               </View>
             </View>

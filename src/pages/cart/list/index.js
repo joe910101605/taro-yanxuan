@@ -41,6 +41,7 @@ export default class List extends Component {
 
   render () {
     const { list } = this.props
+
     return (
       <View className='cart-list'>
         {list.map(item => (
@@ -54,31 +55,31 @@ export default class List extends Component {
             />
             <Image
               className='cart-list__item-img'
-              src={item.pic}
+              src={"http://img.weapi.top/images/"+item.imgUrl}
             />
             <View className='cart-list__item-info'>
               <View className='cart-list__item-title'>
-                {!!item.prefix &&
-                  <Text className='cart-list__item-title-tag'>{item.prefix}</Text>
-                }
+                {/*{!!item.prefix &&*/}
+                {/*  <Text className='cart-list__item-title-tag'>{item.prefix}</Text>*/}
+                {/*}*/}
                 <Text className='cart-list__item-title-name' numberOfLines={1}>
-                  {item.itemName}
+                  {item.goodsName}
                 </Text>
               </View>
 
-              <View className='cart-list__item-spec'>
-                <Text className='cart-list__item-spec-txt'>
-                  {item.specList.map(sepc => sepc.specValue).join(' ')}
-                </Text>
-              </View>
+              {/*<View className='cart-list__item-spec'>*/}
+              {/*  <Text className='cart-list__item-spec-txt'>*/}
+              {/*    {item.specList.map(sepc => sepc.specValue).join(' ')}*/}
+              {/*  </Text>*/}
+              {/*</View>*/}
 
               <View className='cart-list__item-wrap'>
                 <Text className='cart-list__item-price'>
-                  ¥{item.actualPrice}
+                  ¥{item.price}
                 </Text>
                 <View className='cart-list__item-num'>
                   <InputNumber
-                    num={item.cnt}
+                    num={item.count}
                     onChange={this.handleUpdate.bind(this, item)}
                   />
                 </View>

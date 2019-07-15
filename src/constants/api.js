@@ -24,10 +24,10 @@ export const API_CATE_SUB = `${host}/api/category/list`
 export const API_CATE_SUB_LIST = `${host}/api/goods/list`
 
 // cart
-export const API_CART = `${host}/xhr/promotionCart/getCarts.json`
+export const API_CART = `${host}/api/cart/list`
 export const API_CART_NUM = `${host}/xhr/promotionCart/getMiniCartNum.json`
 export const API_CART_RECOMMEND = `${host}/xhr/rcmd/cart.json`
-export const API_CART_ADD = `${host}/xhr/promotionCart/add.json`
+export const API_CART_ADD = `${host}/api/cart/add`
 export const API_CART_UPDATE = `${host}/xhr/promotionCart/update.json`
 export const API_CART_UPDATE_CHECK = `${host}/xhr/promotionCart/updateCheck.json`
 

@@ -5,12 +5,11 @@ const INITIAL_STATE = {
 }
 
 export default function item(state = INITIAL_STATE, action) {
-  console.log(action)
   switch(action.type) {
     case ITEM_INFO: {
       return {
         ...state,
-        itemInfo: action.payload.data.Data
+        itemInfo: action.payload
       }
     }
     case ITEM_RECOMMEND: {

@@ -9,7 +9,7 @@ export default class Detail extends Component {
 
   render () {
     const { html } = this.props
-
+console.log(html)
     // XXX 这边直接把 img 提取出来展示，没有用 RichText
     const imgList = []
     const reg = /<img.*?src="(.*?)".*?\/>/g
@@ -17,6 +17,7 @@ export default class Detail extends Component {
     while (res = reg.exec(html)) {
       imgList.push(res[1])
     }
+    console.log(imgList)
 
     return (
       <View className='item-detail'>
@@ -28,6 +29,7 @@ export default class Detail extends Component {
             mode='widthFix'
           />
         ))}
+
       </View>
     )
   }

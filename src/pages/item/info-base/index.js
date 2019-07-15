@@ -17,14 +17,18 @@ export default class InfoBase extends Component {
         <View className='item-info-base__header'>
           <View className='item-info-base__header-wrap'>
             <Text className='item-info-base__header-name'>{data.goodsName}</Text>
-            // <Text className='item-info-base__header-desc'>{data.simpleDesc}</Text>
+    {/*
+      <Text className='item-info-base__header-desc'>{data.simpleDesc}</Text>
+      */}
           </View>
-          // <View className='item-info-base__header-star'>
-          //   <Text className='item-info-base__header-star-txt'>
-          //     {`${parseFloat(itemStar.goodCmtRate) || 0}%`}
-          //   </Text>
-          //   // <Text className='item-info-base__header-star-link'>{'好评率>'}</Text>
-          // </View>
+    {/*
+          <View className='item-info-base__header-star'>
+            <Text className='item-info-base__header-star-txt'>
+              {`${parseFloat(itemStar.goodCmtRate) || 0}%`}
+            </Text>
+            // <Text className='item-info-base__header-star-link'>{'好评率>'}</Text>
+          </View>
+     */}
         </View>
 
         <View className='item-info-base__price'>

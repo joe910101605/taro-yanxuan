@@ -112,7 +112,9 @@ class Item extends Component {
         >
           <Gallery list={imglist} />
           <InfoBase data={goodsinfo} />
-          // <InfoParam list={itemInfo.attrList} />
+    {/*
+    <InfoParam list={itemInfo.attrList} />
+    */}
           <Detail html={describeHtml} />
         </ScrollView>
 

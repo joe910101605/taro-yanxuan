@@ -56,7 +56,7 @@ export default class List extends Component {
             />
             <Image
               className='cart-list__item-img'
-              src={"http://img.weapi.top/images/"+item.imgUrl}
+              src={"http://152.136.98.71:8100/images/"+item.imgUrl}
             />
             <View className='cart-list__item-info'>
               <View className='cart-list__item-title'>

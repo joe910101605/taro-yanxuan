@@ -28,7 +28,7 @@ export default class ItemList extends Component {
               className='comp-item-list__item'
               onClick={this.handleClick.bind(this, item)}
             >
-              <Image className='comp-item-list__item-img' src={"http://img.weapi.top/images/"+item.img_url} />
+              <Image className='comp-item-list__item-img' src={"http://152.136.98.71:8100/images/"+item.img_url} />
               <View className='comp-item-list__item-info'>
                 {!!item.limitedTag &&
                   <Tag text={item.limitedTag} />

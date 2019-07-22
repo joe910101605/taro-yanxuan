@@ -28,7 +28,7 @@ export default function home(state = INITIAL_STATE, action) {
       const categories = action.payload.categories;
       const grid_list = [];
       categories.forEach(function (item) {
-        grid_list.push({image:"http://img.weapi.top/images/"+item.img_url,value:item.categoryName})
+        grid_list.push({image:"http://152.136.98.71:8100/images/"+item.img_url,value:item.categoryName})
       })
       return {
         ...state,

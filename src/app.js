@@ -32,7 +32,7 @@ class App extends Component {
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: '网易严选',
+      navigationBarTitleText: '通达粮油',
       navigationBarTextStyle: 'black'
     },
     tabBar: {

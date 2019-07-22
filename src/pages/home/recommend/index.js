@@ -32,7 +32,7 @@ export default class Recommend extends Component {
                 className='home-recommend__list-item'
                 onClick={this.handleClick.bind(this, id)}
               >
-                <Image className='home-recommend__list-item-img' src={"http://img.weapi.top/images/"+img_url} />
+                <Image className='home-recommend__list-item-img' src={"http://152.136.98.71:8100/images/"+img_url} />
               {/*
                 {!!categoryItem.simpleDesc && !categoryItem.simpleDescClose &&
                   <Text className='home-recommend__list-item-desc' numberOfLines={1}>

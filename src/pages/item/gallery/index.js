@@ -33,7 +33,7 @@ export default class Gallery extends Component {
             >
               <Image
                 className='item-gallery__swiper-item-img'
-                src={"http://img.weapi.top/images/"+item}
+                src={"http://152.136.98.71:8100/images/"+item}
               />
             </SwiperItem>
           ))}

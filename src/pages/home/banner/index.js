@@ -28,7 +28,7 @@ export default class SwiperBanner extends Component {
             >
               <Image
                 className='home-banner__swiper-item-img'
-                src={"http://img.weapi.top/images/"+item.saved_file_name}
+                src={"http://152.136.98.71:8100/images/"+item.saved_file_name}
               />
             </SwiperItem>
           ))}

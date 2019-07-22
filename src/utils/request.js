@@ -27,12 +27,14 @@ export default async function fetch(options) {
   if (method === 'POST') {
     header['content-type'] = 'application/json'
   }
+  let cookie = Taro.getStorageSync('Cookies')
 
   return Taro.request({
     url,
     method,
     data: payload,
-    header
+    header:{'Cookie': cookie,
+      'content-type':'application/json'}
   }).then(async (res) => {
     const { code, Data } = res.data
     if (code !== CODE_SUCCESS) {

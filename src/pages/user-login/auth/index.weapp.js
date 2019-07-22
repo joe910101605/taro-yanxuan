@@ -10,9 +10,24 @@ export default class AUth extends Component {
         if (res.code) {
           //用户登录凭证（有效期五分钟）。开发者需要在开发者服务器后台调用 api，使用 code 换取 openid 和 session_key 等信息
           // https://api.weixin.qq.com/sns/jscode2session?appid=wx06c59f9986f41f98&secret=2b12230524b29014cad94f69e5402da7&js_code=021kzKzH1IgC420YglAH1LwZzH1kzKzJ&grant_type=authorization_code
-          Taro.navigateTo({
-            url: '/pages/user-login-email/user-login-email'
+          // Taro.navigateTo({
+          //   url: '/pages/user-login-email/user-login-email'
+          // })
+          Taro.request({
+            url:'http://localhost:8001/api/user/welogin',
+            method:'get',
+            data:{
+              code:res.code,
+            },
+            header: {
+             'content-type':  'application/json'
+            }
+          }).then(json => {
+            let cookies = json.header['Set-Cookie'].replace(/,/g, ';')
+            console.log('=======', cookies)
+            Taro.setStorageSync('Cookies', cookies)
           })
+
         } else {
           console.log("登录失败！" + res.errMsg);
         }

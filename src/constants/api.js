@@ -32,7 +32,7 @@ export const API_CART_UPDATE = `${host}/api/cart/update`
 export const API_CART_UPDATE_CHECK = `${host}/api/cart/updateCheck`
 
 // user
-export const API_USER = `${host}/xhr/user/getDetail.json`
+export const API_USER = `${host}/api/user/curuser`
 export const API_USER_LOGIN = `${host}/xhr/u/mailLogin.json`
 export const API_CHECK_LOGIN = `${host}/xhr/u/checkLogin.json`
 

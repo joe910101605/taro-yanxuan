@@ -53,7 +53,7 @@ export default class Profile extends Component {
 
           <View className='user-profile__info' onClick={this.handleLogin}>
             <Text className='user-profile__info-name'>
-              {userInfo.login ? userInfo.nickname : '未登录'}
+              {userInfo.login ? "您的用户ID为："+userInfo.id : '未登录'}
             </Text>
             {userInfo.login ?
               <View className='user-profile__info-wrap'>

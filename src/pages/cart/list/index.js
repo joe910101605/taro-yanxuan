@@ -2,6 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
 import { CheckboxItem, InputNumber } from '@components'
 import './index.scss'
+import { hostIMG } from '@constants/api'
 
 export default class List extends Component {
   static defaultProps = {
@@ -56,7 +57,7 @@ export default class List extends Component {
             />
             <Image
               className='cart-list__item-img'
-              src={"http://152.136.98.71:8100/images/"+item.imgUrl}
+              src={hostIMG+item.imgUrl}
             />
             <View className='cart-list__item-info'>
               <View className='cart-list__item-title'>

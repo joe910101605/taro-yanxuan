@@ -1,6 +1,7 @@
 import {
   HOME_INFO,HOME_CATEGORIES,HOME_BANNERIMAGES, HOME_SEARCH_COUNT, HOME_RECOMMEND, HOME_PIN
 } from '@constants/home'
+import { hostIMG } from '@constants/api'
 
 const INITIAL_STATE = {
   homeInfo: {},
@@ -28,7 +29,7 @@ export default function home(state = INITIAL_STATE, action) {
       const categories = action.payload.categories;
       const grid_list = [];
       categories.forEach(function (item) {
-        grid_list.push({image:"http://152.136.98.71:8100/images/"+item.img_url,value:item.categoryName})
+        grid_list.push({image:hostIMG+item.img_url,value:item.categoryName})
       })
       return {
         ...state,

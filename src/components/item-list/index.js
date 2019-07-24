@@ -2,6 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
 import { Tag } from '@components'
 import './index.scss'
+import { hostIMG } from '@constants/api'
 
 export default class ItemList extends Component {
   static defaultProps = {
@@ -28,7 +29,7 @@ export default class ItemList extends Component {
               className='comp-item-list__item'
               onClick={this.handleClick.bind(this, item)}
             >
-              <Image className='comp-item-list__item-img' src={"http://152.136.98.71:8100/images/"+item.img_url} />
+              <Image className='comp-item-list__item-img' src={hostIMG+item.img_url} />
               <View className='comp-item-list__item-info'>
                 {!!item.limitedTag &&
                   <Tag text={item.limitedTag} />

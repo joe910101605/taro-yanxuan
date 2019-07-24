@@ -53,13 +53,14 @@ class Item extends Component {
 
       // const skuItem = itemInfo.skuMap[selectedItem.id] || {}
 
-      console.log(itemInfo)
+      // console.log(itemInfo)
       const payload = {
         goodsId:itemInfo.goodsinfo.id,
         // skuId: skuItem.id,
         cnt: selectedItem.cnt
       }
       this.props.dispatchAdd(payload).then(() => {
+        // console.log(payload)
         Taro.showToast({
           title: '加入购物车成功',
           icon: 'none'

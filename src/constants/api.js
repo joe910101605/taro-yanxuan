@@ -5,6 +5,7 @@
 /* eslint-disable */
 export const host = HOST
 export const hostM = HOST_M
+export const hostIMG=HOST_IMG
 /* eslint-enable */
 
 // pic

@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Swiper, SwiperItem, Image } from '@tarojs/components'
 import './index.scss'
+import { hostIMG } from '@constants/api'
 
 export default class SwiperBanner extends Component {
   static defaultProps = {
@@ -28,7 +29,7 @@ export default class SwiperBanner extends Component {
             >
               <Image
                 className='home-banner__swiper-item-img'
-                src={"http://152.136.98.71:8100/images/"+item.saved_file_name}
+                src={hostIMG+item.saved_file_name}
               />
             </SwiperItem>
           ))}

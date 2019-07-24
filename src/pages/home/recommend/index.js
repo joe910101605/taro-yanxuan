@@ -3,6 +3,7 @@ import { View, Text, Image } from '@tarojs/components'
 import { Tag } from '@components'
 import defaultAvatar from '@assets/default-avatar.png'
 import './index.scss'
+import { hostIMG } from '@constants/api'
 
 export default class Recommend extends Component {
   static defaultProps = {
@@ -32,7 +33,7 @@ export default class Recommend extends Component {
                 className='home-recommend__list-item'
                 onClick={this.handleClick.bind(this, id)}
               >
-                <Image className='home-recommend__list-item-img' src={"http://152.136.98.71:8100/images/"+img_url} />
+                <Image className='home-recommend__list-item-img' src={hostIMG+img_url} />
               {/*
                 {!!categoryItem.simpleDesc && !categoryItem.simpleDescClose &&
                   <Text className='home-recommend__list-item-desc' numberOfLines={1}>

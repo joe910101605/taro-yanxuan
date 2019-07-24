@@ -2,6 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
 import classNames from 'classnames'
 import './index.scss'
+import { hostIMG } from '@constants/api'
 
 export default class List extends Component {
   static defaultProps = {
@@ -35,7 +36,7 @@ export default class List extends Component {
                   )}
                   onClick={this.handleClick.bind(this, item)}
                 >
-                  <Image className='cate-list__item-img' src={"http://152.136.98.71:8100/images/"+item.img_url} />
+                  <Image className='cate-list__item-img' src={hostIMG+item.img_url} />
                   <View className='cate-list__item-txt-wrap'>
                     <Text className='cate-list__item-txt'>{item.categoryName}</Text>
                   </View>

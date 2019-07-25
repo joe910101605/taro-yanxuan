@@ -38,7 +38,7 @@ class search extends Component {
     console.log(goodslist)
     return (
       <View className='item'>
-        <AtSearchBar value={""} onChange={this.onSearchBarChange} onActionClick={this.onSearch}/>
+        <AtSearchBar value={""} focus={true} onChange={this.onSearchBarChange} onActionClick={this.onSearch}/>
         <ScrollView
           scrollY
           className='item__wrap'

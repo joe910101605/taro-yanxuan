@@ -20,15 +20,15 @@ class Index extends Component {
   }
 
   state = {
-    loaded: false,
-    login: false
+    loaded: false
   }
 
   componentDidShow() {
     // fetch({ url: API_CHECK_LOGIN, showToast: false, autoLogin: false }).then((res) => {
     //   if (res) {
-        this.setState({ loaded: true, login: true })
+
         this.props.dispatchCart()
+        this.setState({ loaded: true })
         //this.props.dispatchCartNum()
         //this.props.dispatchRecommend()
       // } else {
@@ -44,9 +44,9 @@ class Index extends Component {
   }
 
   render () {
-    const { cartInfo, recommend } = this.props
+    const { cartInfo } = this.props
 
-    const { goods = [] } = cartInfo
+    const { goods = [],islogin } = cartInfo
     // const cartList = goods.filter(i => !i.promType)
     //const extList = recommend.extList || []
     const isEmpty = !goods.length
@@ -55,8 +55,7 @@ class Index extends Component {
     if (!this.state.loaded) {
       return <Loading />
     }
-
-    if (!this.state.login) {
+    if (!islogin) {
       return (
         <View className='cart cart--not-login'>
           <Empty text='未登陆' />

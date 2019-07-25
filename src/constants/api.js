@@ -19,6 +19,9 @@ export const API_HOME_SEARCH_COUNT = `${host}/api/home/goodscount`
 export const API_HOME_PIN = `${hostM}/pin/min/item/recommend.json`
 export const API_HOME_RECOMMEND = `${host}/api/home/recommend`
 
+//search
+export const API_SEARCH = `${host}/api/goods/list`
+
 // cate
 export const API_CATE = `${host}/api/category/list`
 export const API_CATE_SUB = `${host}/api/category/list`

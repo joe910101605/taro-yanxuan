@@ -20,6 +20,7 @@ class App extends Component {
   config = {
     pages: [
       'pages/home/home',
+      'pages/search/search',
       'pages/cate/cate',
       'pages/cate-sub/cate-sub',
       'pages/cart/cart',

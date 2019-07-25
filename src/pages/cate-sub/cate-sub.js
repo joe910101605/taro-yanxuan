@@ -25,6 +25,7 @@ class CateSub extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props)
     const payload = { parent_id: this.categoryId }
     this.props.dispatchSubMenu(payload).then((res) => {
       this.setState({ loaded: true })
